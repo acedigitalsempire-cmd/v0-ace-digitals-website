@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #050B18;
+  --foreground: #ffffff;
+  --card: #0B1F3B;
+  --card-foreground: #ffffff;
+  --popover: #0B1F3B;
+  --popover-foreground: #ffffff;
+  --primary: #1E6FD9;
+  --primary-foreground: #ffffff;
+  --secondary: #0B1F3B;
+  --secondary-foreground: #ffffff;
+  --muted: #1a3a5a;
+  --muted-foreground: #a0b0c0;
+  --accent: #2F8CFF;
+  --accent-foreground: #ffffff;
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+  --border: #1a3a5a;
+  --input: #0B1F3B;
+  --ring: #2F8CFF;
+  --brand-primary: #1E6FD9;
+  --brand-navy: #0B1F3B;
+  --brand-glow: #2F8CFF;
+  --brand-gold: #D4AF37;
+  --brand-gold-soft: #F2D675;
+  --brand-dark: #050B18;
+  --chart-1: #1E6FD9;
+  --chart-2: #2F8CFF;
+  --chart-3: #D4AF37;
+  --chart-4: #F2D675;
+  --chart-5: #0B1F3B;
+  --radius: 0.625rem;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: #1E6FD9;
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: #D4AF37;
+  --sidebar-accent-foreground: oklch(0.12 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: #2F8CFF;
+}
+
+.dark {
+  --background: #050B18;
+  --foreground: #ffffff;
+  --card: #0B1F3B;
+  --card-foreground: #ffffff;
+  --popover: #0B1F3B;
+  --popover-foreground: #ffffff;
+  --primary: #1E6FD9;
+  --primary-foreground: #ffffff;
+  --secondary: #0B1F3B;
+  --secondary-foreground: #ffffff;
+  --muted: #1a3a5a;
+  --muted-foreground: #a0b0c0;
+  --accent: #2F8CFF;
+  --accent-foreground: #ffffff;
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+  --border: #1a3a5a;
+  --input: #0B1F3B;
+  --ring: #2F8CFF;
+  --brand-primary: #1E6FD9;
+  --brand-navy: #0B1F3B;
+  --brand-glow: #2F8CFF;
+  --brand-gold: #D4AF37;
+  --brand-gold-soft: #F2D675;
+  --brand-dark: #050B18;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: #1E6FD9;
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: #D4AF37;
+  --sidebar-accent-foreground: oklch(0.12 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: #2F8CFF;
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-glow: var(--brand-glow);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-soft: var(--brand-gold-soft);
+  --color-brand-dark: var(--brand-dark);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(30, 111, 217, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(30, 111, 217, 0.8), 0 0 30px rgba(47, 140, 255, 0.5);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(30, 111, 217, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(47, 140, 255, 0.6);
+  }
+}
+
+@keyframes brand-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(47, 140, 255, 0.4), inset 0 0 20px rgba(30, 111, 217, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(47, 140, 255, 0.8), inset 0 0 30px rgba(30, 111, 217, 0.2);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-brand-glow {
+  animation: brand-glow 3s ease-in-out infinite;
+}
+
+/* Premium CTA Button Styles */
+.btn-premium {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-brand-primary text-white hover:shadow-lg hover:-translate-y-1 border-0;
+  box-shadow: 0 0 30px rgba(47, 140, 255, 0.3);
+}
+
+.btn-premium:hover {
+  box-shadow: 0 0 50px rgba(47, 140, 255, 0.6), 0 0 80px rgba(30, 111, 217, 0.3);
+}
+
+/* Brand Gold Accent */
+.accent-gold {
+  @apply text-brand-gold;
+}
+
+.accent-gold-soft {
+  @apply text-brand-gold-soft;
+}
+
+/* Card with premium styling */
+.card-premium {
+  @apply bg-brand-navy border border-brand-glow/20 rounded-xl transition-all duration-300 hover:border-brand-glow/50;
+}
