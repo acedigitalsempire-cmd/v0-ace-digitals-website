@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy border-t border-brand-primary/20 py-12 px-4">
+    <footer className="bg-brand-navy border-t border-brand-gold/20 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -21,47 +21,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4 text-brand-primary">Company</h3>
+            <h3 className="font-bold text-lg mb-4 text-brand-gold">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="/about" className="hover:text-brand-primary transition-colors">
+                <a href="/about" className="hover:text-brand-gold transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-brand-primary transition-colors">
+                <a href="/about" className="hover:text-brand-gold transition-colors">
                   Our Team
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-brand-primary transition-colors">
-                  Careers
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4 text-brand-primary">Services</h3>
+            <h3 className="font-bold text-lg mb-4 text-brand-gold">Services</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="/services" className="hover:text-brand-primary transition-colors">
+                <a href="/services" className="hover:text-brand-gold transition-colors">
                   Website Design
                 </a>
               </li>
               <li>
-                <a href="/services" className="hover:text-brand-primary transition-colors">
-                  Social Media
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-brand-primary transition-colors">
-                  AI Automation
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-brand-primary transition-colors">
-                  SAAS Development
+                <a href="/services" className="hover:text-brand-gold transition-colors">
+                  All Services
                 </a>
               </li>
             </ul>
@@ -95,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-brand-primary/20 pt-8 text-center text-gray-500">
+        <div className="border-t border-brand-gold/20 pt-8 text-center text-gray-500">
           <p>© 2025 Ace Digitals Global — We Run The Digital Streets.</p>
         </div>
       </div>

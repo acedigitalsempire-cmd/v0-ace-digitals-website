@@ -1,53 +1,106 @@
-"use client"
-
-import { getProductWhatsAppLink } from "@/lib/whatsapp"
-import { useRouter } from "next/navigation"
-
-const ShoppingCart = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-    />
-  </svg>
-)
-
-const Star = ({ filled }: { filled: boolean }) => (
-  <svg className={`w-3.5 h-3.5 ${filled ? "fill-accent text-accent" : "text-gray-600"}`} viewBox="0 0 20 20">
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-  </svg>
-)
+import Link from 'next/link'
 
 const products = [
   {
     id: 1,
-    name: "Professional Website Package",
-    description: "Complete website development with SEO optimization",
-    price: "Custom Quote",
-    rating: 4.9,
-    reviews: 128,
-    image: "/professional-website-design-portfolio.jpg",
+    title: 'Professional Website Package',
+    description: 'Complete website design and development',
+    price: 'Custom Quote',
+    features: ['5-page website', 'Mobile responsive', 'SEO optimized']
   },
   {
     id: 2,
-    name: "Social Media Growth Bundle",
-    description: "3-month social media management and growth strategy",
-    price: "Custom Quote",
-    rating: 4.8,
-    reviews: 95,
-    image: "/social-media-marketing-bundle.jpg",
+    title: 'Social Media Strategy',
+    description: '3-month social media growth plan',
+    price: 'Custom Quote',
+    features: ['Content calendar', 'Daily posting', 'Analytics']
   },
   {
     id: 3,
-    name: "AI Automation Setup",
-    description: "Custom AI automation for your business workflows",
-    price: "Custom Quote",
-    rating: 4.9,
-    reviews: 67,
-    image: "/ai-automation-setup.jpg",
+    title: 'AI Automation Setup',
+    description: 'Custom AI solutions for your business',
+    price: 'Custom Quote',
+    features: ['Chatbot setup', 'Email automation', 'Integration']
   },
+  {
+    id: 4,
+    title: 'Content Monetization Program',
+    description: 'Turn your content into revenue',
+    price: 'Custom Quote',
+    features: ['Revenue setup', 'Platform integration', 'Optimization']
+  },
+  {
+    id: 5,
+    title: 'SaaS MVP Development',
+    description: 'Build your software product MVP',
+    price: 'Custom Quote',
+    features: ['MVP build', 'Cloud deployment', 'Documentation']
+  },
+  {
+    id: 6,
+    title: 'Professional CV Service',
+    description: 'Create a compelling professional profile',
+    price: 'Custom Quote',
+    features: ['CV writing', 'LinkedIn optimization', 'Cover letter']
+  },
+]
+
+export default function Shop() {
+  return (
+    <div className="w-full">
+      {/* Hero */}
+      <section className="min-h-[40vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-brand-navy to-brand-dark">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 text-brand-gold">Our Shop</h1>
+          <p className="text-xl text-gray-300">Premium packages and services</p>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="py-20 px-4 bg-brand-dark">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <div key={product.id} className="bg-brand-navy border border-brand-primary/20 rounded-xl overflow-hidden hover:border-brand-gold/50 hover:shadow-lg hover:shadow-brand-gold/20 transition-all duration-300 group">
+                <div className="p-6 flex flex-col h-full">
+                  <h3 className="text-lg font-black text-brand-gold mb-2 group-hover:text-brand-gold-soft transition-colors">
+                    {product.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4">{product.description}</p>
+                  
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="text-gray-300 text-sm flex items-center">
+                        <span className="w-1.5 h-1.5 bg-brand-gold rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="border-t border-brand-gold/20 pt-4">
+                    <p className="text-brand-gold font-bold mb-4 text-center text-lg">{product.price}</p>
+                    <a href="https://wa.me/2349079581937" className="block w-full text-center px-4 py-2 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-glow transition-colors">
+                      Get Quote
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-4 bg-gradient-to-r from-brand-navy via-brand-dark to-brand-navy">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-brand-gold mb-6">Custom Solutions Available</h2>
+          <p className="text-lg text-gray-300 mb-8">Don't see what you need? Let's discuss custom packages</p>
+          <a href="https://wa.me/2349079581937" className="inline-block px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-glow transition-all transform hover:scale-105">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </section>
+    </div>
   {
     id: 4,
     name: "Google My Business Optimization",

@@ -1,127 +1,80 @@
-"use client"
-
-import { CheckCircle, Users, Zap, Target } from "lucide-react"
-
-export default function AboutPage() {
+export default function About() {
   return (
-    <main className="bg-background text-foreground min-h-screen pt-24">
-      {/* Header with background image */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        <img
-          src="/diverse-nigerian-team-collaborating-in-modern-offi.jpg"
-          alt="About header"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/70" />
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h1 className="text-6xl md:text-7xl font-black mb-4 text-brand-gold">About Us</h1>
+    <div className="w-full">
+      {/* Hero */}
+      <section className="min-h-[40vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-brand-navy to-brand-dark">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 text-brand-gold">About Us</h1>
           <p className="text-xl text-gray-300">We Run The Digital Streets</p>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 px-4">
+      {/* Our Story */}
+      <section className="py-20 px-4 bg-brand-dark">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card border border-primary/20 rounded-lg p-8 md:p-12">
-            <h2 className="text-4xl font-black text-brand-gold mb-6">Our Story</h2>
-            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-              <p>
-                Founded in 2018, Ace Digitals Global started with a simple mission: to help African creators and
-                businesses dominate the digital space. What began as a small team of passionate digital enthusiasts has
-                evolved into a full-service digital powerhouse serving clients across the continent.
-              </p>
-              <p>
-                We've worked with solopreneurs, small businesses, startups, and established companies, delivering
-                innovative digital solutions that combine cutting-edge technology with creative storytelling. Our
-                approach is simple: understand your goals, leverage the latest tools and strategies, and deliver results
-                that exceed expectations.
-              </p>
-              <p>
-                Today, Ace Digitals Global is recognized as a leader in digital transformation, AI automation, and
-                creative digital services. We're proud of the impact we've made on our clients' businesses and the
-                communities we serve.
-              </p>
-            </div>
+          <h2 className="text-4xl font-black text-brand-gold mb-8">Our Story</h2>
+          <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+            <p>
+              Ace Digitals Global was founded with a mission to empower brands and creators to dominate the digital space. We believe that digital success shouldn't be complicated or expensive. Our team of experts is dedicated to helping businesses of all sizes achieve their online goals.
+            </p>
+            <p>
+              From web development to AI automation, from social media strategy to SaaS product development, we provide comprehensive digital solutions that drive real results. We're not just service providers; we're your partners in digital transformation.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision with images */}
-      <section className="py-20 px-4 bg-card/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card border border-primary/20 rounded-lg overflow-hidden hover:border-primary/40 transition-colors">
-              <img src="/nigerian-entrepreneur-working-on-laptop-with-visio.jpg" alt="Our mission" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <Target className="text-primary mb-4" size={40} />
-                <h3 className="text-2xl font-black text-primary mb-4">Our Mission</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To empower African creators, entrepreneurs, and businesses with world-class digital solutions that
-                  drive growth, innovation, and success in the digital economy.
-                </p>
-              </div>
-            </div>
-            <div className="bg-card border border-accent/20 rounded-lg overflow-hidden hover:border-accent/40 transition-colors">
-              <img src="/african-tech-team-celebrating-success-with-digital.jpg" alt="Our vision" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <Zap className="text-accent mb-4" size={40} />
-                <h3 className="text-2xl font-black text-accent mb-4">Our Vision</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To be the most trusted digital partner for African businesses, known for delivering exceptional
-                  results, innovative solutions, and transformative impact.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-20 px-4">
+      {/* Our Values */}
+      <section className="py-20 px-4 bg-brand-navy">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black text-primary mb-12 text-center">Our Core Values</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="text-4xl font-black text-brand-gold mb-12 text-center">Our Values</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Excellence", description: "We deliver nothing but the best in everything we do" },
-              { title: "Innovation", description: "We stay ahead of trends and embrace cutting-edge technology" },
-              { title: "Integrity", description: "We build trust through transparency and honest communication" },
-              { title: "Impact", description: "We measure success by the real results we deliver for our clients" },
-              { title: "Collaboration", description: "We work closely with our clients as true partners" },
-              { title: "Growth", description: "We're committed to continuous learning and improvement" },
-            ].map((value, index) => (
-              <div key={index} className="flex gap-4">
-                <CheckCircle className="text-accent flex-shrink-0" size={24} />
-                <div>
-                  <h3 className="text-xl font-black text-primary mb-2">{value.title}</h3>
-                  <p className="text-gray-400">{value.description}</p>
-                </div>
+              { title: 'Excellence', description: 'We deliver quality in everything we do' },
+              { title: 'Innovation', description: 'We stay ahead of digital trends' },
+              { title: 'Integrity', description: 'We build lasting client relationships' },
+            ].map((value, i) => (
+              <div key={i} className="bg-brand-dark border border-brand-primary/20 rounded-xl p-6 text-center">
+                <h3 className="text-2xl font-black text-brand-gold mb-3">{value.title}</h3>
+                <p className="text-gray-400">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section with image */}
-      <section className="py-20 px-4 bg-card/50">
+      {/* Why Choose Us */}
+      <section className="py-20 px-4 bg-brand-dark">
         <div className="max-w-4xl mx-auto">
-          <img src="/nigerian-diverse-team-of-professionals-in-modern-o.jpg" alt="Our team" className="w-full h-64 object-cover rounded-lg mb-8" />
-          <div className="text-center">
-            <h2 className="text-4xl font-black text-primary mb-6">Our Team</h2>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              We're a diverse team of digital experts, designers, developers, strategists, and creative minds united by
-              a passion for helping African businesses succeed in the digital space. Each team member brings unique
-              expertise and a commitment to excellence.
-            </p>
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 flex items-center justify-center gap-3">
-              <Users className="text-primary" size={32} />
-              <div className="text-left">
-                <p className="text-2xl font-black text-primary">50+ Team Members</p>
-                <p className="text-gray-400">Across Africa, dedicated to your success</p>
+          <h2 className="text-4xl font-black text-brand-gold mb-12">Why Choose Us</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              'Expert team with years of experience',
+              'Proven track record of success',
+              'Customized solutions for your needs',
+              'Transparent communication',
+              'Competitive pricing',
+              '24/7 support availability',
+            ].map((reason, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <span className="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center flex-shrink-0 text-brand-dark font-black">✓</span>
+                <p className="text-lg text-gray-300">{reason}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-    </main>
+
+      {/* CTA */}
+      <section className="py-20 px-4 bg-gradient-to-r from-brand-navy via-brand-dark to-brand-navy">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-brand-gold mb-6">Let's Work Together</h2>
+          <p className="text-lg text-gray-300 mb-8">Ready to take your digital presence to the next level?</p>
+          <a href="https://wa.me/2349079581937" className="inline-block px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-glow transition-all transform hover:scale-105">
+            Start Your Journey
+          </a>
+        </div>
+      </section>
+    </div>
   )
 }

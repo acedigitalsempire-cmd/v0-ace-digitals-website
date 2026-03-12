@@ -1,53 +1,96 @@
-"use client"
-
-import { ArrowRight, Calendar, User } from "lucide-react"
-import Link from "next/link"
+import Link from 'next/link'
 
 const blogPosts = [
   {
     id: 1,
-    title: "How to Build a Website That Converts in 2025",
-    excerpt:
-      "Learn the essential strategies for creating high-converting websites that turn visitors into paying customers.",
-    date: "January 15, 2025",
-    author: "Ace Digitals Team",
-    category: "Web Development",
-    image: "/project-grid/project-2.png",
+    title: 'How to Grow Your Social Media Following in 30 Days',
+    category: 'Social Media',
+    excerpt: 'Discover proven strategies to grow your audience quickly and authentically.',
+    date: 'Mar 10, 2025'
   },
   {
     id: 2,
-    title: "The Complete Guide to Google My Business Optimization",
-    excerpt: "Master local SEO and dominate your local search results with our comprehensive GMB optimization guide.",
-    date: "January 10, 2025",
-    author: "Ace Digitals Team",
-    category: "Local SEO",
-    image: "/google-my-business-dashboard-on-computer.jpg",
+    title: 'The Future of AI Automation in Business',
+    category: 'AI & Automation',
+    excerpt: 'Explore how AI is transforming business operations and improving efficiency.',
+    date: 'Mar 8, 2025'
   },
   {
     id: 3,
-    title: "AI Automation: The Future of Business Efficiency",
-    excerpt:
-      "Discover how AI automation can save your business thousands of hours and reduce operational costs dramatically.",
-    date: "January 5, 2025",
-    author: "Ace Digitals Team",
-    category: "AI & Automation",
-    image: "/ai-automation-technology-interface.jpg",
+    title: 'Building Your First SaaS MVP: A Beginner\'s Guide',
+    category: 'SaaS',
+    excerpt: 'Step-by-step guide to launching your first software product successfully.',
+    date: 'Mar 5, 2025'
   },
   {
     id: 4,
-    title: "Social Media Marketing Trends That Will Dominate 2025",
-    excerpt:
-      "Stay ahead of the curve with the latest social media marketing strategies and trends for creators and businesses.",
-    date: "December 28, 2024",
-    author: "Ace Digitals Team",
-    category: "Social Media",
-    image: "/nigerian-content-creator-on-social-media.jpg",
+    title: 'Website Design Trends in 2025',
+    category: 'Web Design',
+    excerpt: 'Latest design trends that will make your website stand out.',
+    date: 'Mar 1, 2025'
   },
   {
     id: 5,
-    title: "Monetizing Your Content: 5 Revenue Streams You're Missing",
-    excerpt: "Learn multiple ways to monetize your audience and create sustainable passive income from your content.",
-    date: "December 20, 2024",
+    title: 'Content Monetization Strategies for Creators',
+    category: 'Content',
+    excerpt: 'Multiple ways to turn your content into a sustainable income stream.',
+    date: 'Feb 27, 2025'
+  },
+  {
+    id: 6,
+    title: 'Mastering Google My Business for Local SEO',
+    category: 'Local SEO',
+    excerpt: 'Complete guide to optimizing your local business presence online.',
+    date: 'Feb 24, 2025'
+  },
+]
+
+export default function Blog() {
+  return (
+    <div className="w-full">
+      {/* Hero */}
+      <section className="min-h-[40vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-brand-navy to-brand-dark">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 text-brand-gold">Our Blog</h1>
+          <p className="text-xl text-gray-300">Insights, tips, and strategies for digital success</p>
+        </div>
+      </section>
+
+      {/* Blog Posts Grid */}
+      <section className="py-20 px-4 bg-brand-dark">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts.map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="group">
+                <div className="bg-brand-navy border border-brand-primary/20 rounded-xl p-6 h-full hover:border-brand-gold/50 hover:shadow-lg hover:shadow-brand-gold/20 transition-all duration-300">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-brand-gold/20 text-brand-gold text-xs font-bold rounded-full">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-black text-brand-gold mb-3 group-hover:text-brand-gold-soft transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4">{post.excerpt}</p>
+                  <p className="text-gray-500 text-xs">{post.date}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-4 bg-gradient-to-r from-brand-navy via-brand-dark to-brand-navy">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-brand-gold mb-6">Have Questions?</h2>
+          <p className="text-lg text-gray-300 mb-8">Let's discuss how we can help your business grow</p>
+          <a href="https://wa.me/2349079581937" className="inline-block px-8 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-glow transition-all transform hover:scale-105">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </section>
+    </div>
     author: "Ace Digitals Team",
     category: "Monetization",
     image: "/african-creator-earning-money-from-content.jpg",
